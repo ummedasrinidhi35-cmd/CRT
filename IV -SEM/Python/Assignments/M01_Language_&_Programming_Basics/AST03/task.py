@@ -1,14 +1,14 @@
+import math
 def Student_Grade_System(name:str,n1: int,n2: int,n3: int) -> str:
-   average = round((n1+n2+n3)/3,2)
-
-   if average >= 40:
-       status = "Pass"
+   avg  = (n1 + n2 + n3) / 3
+   avg = math.floor(avg * 100) / 100
+   if avg.is_integer():
+       avg_str = f"{avg:.1f}"
    else:
-       status = "fail"
-
-   return f"Average grade: {average}, Status: {status}"
-
-    
+       avg_str = f"{avg:.2f}"
+   status = "Pass" if avg >= 40 else "fail"
+   
+   return f"Average grade: {avg_str}, Status: {status}"    
 if __name__ == '__main__':
     name = input()
     n1,n2,n3 = list(map(int,input().split()))
