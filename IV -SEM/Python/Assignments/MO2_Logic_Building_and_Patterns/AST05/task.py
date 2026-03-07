@@ -1,8 +1,13 @@
-from typing import List
+def number_triangle(n: int) -> str:
+    pattern = ""
+    for i in range(1, n + 1):
+        for j in range(1, i + 1):
+            pattern += str(j)
+        if i != n:
+            pattern += "\n"
+    return pattern
 
 
-def Collatz_Sequence(n: int)-> List:
-   pass
-if __name__ == '__main__':
+if __name__ == "__main__":
     n = int(input())
-    print(Collatz_Sequence(n))
+    print(number_triangle(n))
